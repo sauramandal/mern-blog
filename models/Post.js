@@ -4,15 +4,15 @@ const Schema = mongoose.Schema
 
 const PostSchema = new Schema({
     title: {
-        type: string,
+        type: String,
         required: true
     },
     category: {
-        type: string,
+        type: String,
         required: true
     },
-    post: {
-        type: string,
+    description: {
+        type: String,
         required: true
     }, 
     date: {
@@ -21,4 +21,4 @@ const PostSchema = new Schema({
     }
 })
 
-module.exports = Post = mongoose.model('post', PostSchema)
+module.exports = Post = mongoose.model('Post', PostSchema)
