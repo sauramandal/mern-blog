@@ -18,23 +18,20 @@ router.get('/:id', (req, res) => {
 
 // @route POST api/posts
 router.post('/', (req, res) => {
-    console.log(req.body);
-    
-    const newPost = new Post({
-        title: req.body.title,
-        category: req.body.category,
-        description: req.body.description
+    Post.create(req.body)
+        .then(posts => res.json(posts))
     })
 
-    newPost.save()
-        .then(post => res.json(post))
+//@route UPDATE api/posts/:id
+router.put('/:id', (req, res) => {
+    Post.findByIdAndUpdate(req.params.id, req.body)
+        .then(posts => res.json(posts))
 })
+
 // @route DELETE api/posts/:id
 router.delete('/:id', (req, res) => {
-    Post.findById(req.params.id)
-        .then(post => post.remove()
-        .then(() => res.json({success: true})))
-        .catch(err => res.status(404).json({success: false}))
+    Post.findByIdAndRemove(req.params.id)
+        .then(posts => res.json)
 })
 
 
