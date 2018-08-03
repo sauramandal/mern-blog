@@ -24,7 +24,7 @@ class Home extends Component {
         <Container>
 
        
-       <Button color='primary' > <Link style={{textDecoration: 'none', color: 'white'}} to='/newpost'>Add Post</Link></Button>
+       <Button color='primary' > <Link style={{textDecoration: 'none', color: 'white', marginBottom: '20px'}} to='/newpost'>Add Post</Link></Button>
       <Table striped>
           
           <thead>
